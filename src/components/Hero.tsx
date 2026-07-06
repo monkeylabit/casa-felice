@@ -97,7 +97,7 @@ export function Hero() {
             className="flex items-center gap-3 rounded-full bg-brick px-9 py-4 text-lg font-medium text-white shadow-xl shadow-ink/30 transition-colors hover:bg-brick-dark"
           >
             <Phone className="h-5 w-5" />
-            Prenota da privato · {SITE.telefono1.label}
+            Prenota {SITE.telefono1.label}
           </motion.a>
           <motion.a
             href={`mailto:${SITE.email}?subject=Informazioni%20altri%20appartamenti`}
