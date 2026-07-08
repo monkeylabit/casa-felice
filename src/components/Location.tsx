@@ -1,11 +1,11 @@
-import { MapPin, Waves, Mountain, TrainFront } from 'lucide-react'
+import { MapPin, Waves, Mountain, Plane } from 'lucide-react'
 import { Reveal } from './Reveal'
 import { SITE } from '../site'
 
 const dintorni = [
-  { icona: Waves, testo: 'Mare e spiagge di Pescara a ~15 minuti d’auto' },
+  { icona: Plane, testo: 'Aeroporto di Pescara a soli 3 km, 10 minuti d’auto' },
+  { icona: Waves, testo: 'Mare e spiagge di Pescara a 8 km' },
   { icona: Mountain, testo: 'Colline e borghi d’Abruzzo tutt’intorno' },
-  { icona: TrainFront, testo: 'Pescara centro e stazione a due passi' },
 ]
 
 export function Location() {

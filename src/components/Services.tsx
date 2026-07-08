@@ -6,6 +6,7 @@ import {
   Baby,
   AirVent,
   CarFront,
+  PawPrint,
 } from 'lucide-react'
 import { Reveal } from './Reveal'
 import { Cuore } from './Cuore'
@@ -16,6 +17,7 @@ const servizi = [
   { icona: Baby, titolo: 'Adatta ai bambini', testo: 'Culla e cameretta pronte per i più piccoli.' },
   { icona: AirVent, titolo: 'Climatizzata', testo: 'Fresca d’estate e calda d’inverno.' },
   { icona: CarFront, titolo: 'Parcheggio comodo', testo: 'Si parcheggia facilmente, senza pensieri.' },
+  { icona: PawPrint, titolo: 'Animali ammessi', testo: 'I vostri amici a quattro zampe sono i benvenuti, senza supplemento.' },
 ]
 
 export function Services() {

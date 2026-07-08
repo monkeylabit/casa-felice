@@ -6,6 +6,7 @@ import { Cuore } from './Cuore'
 const voci = [
   { label: 'La casa', href: '#la-casa' },
   { label: 'Galleria', href: '#galleria' },
+  { label: 'Recensioni', href: '#recensioni' },
   { label: 'Servizi', href: '#servizi' },
   { label: 'Dove siamo', href: '#dove-siamo' },
   { label: 'Contatti', href: '#contatti' },
