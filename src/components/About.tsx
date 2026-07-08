@@ -9,7 +9,7 @@ export function About() {
       {/* Aloni morbidi di colore sullo sfondo */}
       <div
         aria-hidden
-        className="pointer-events-none absolute -top-24 -right-32 h-96 w-96 rounded-full bg-blush/50 blur-3xl"
+        className="pointer-events-none absolute top-16 -right-32 h-96 w-96 rounded-full bg-blush/50 blur-3xl"
       />
       <div
         aria-hidden
