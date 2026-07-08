@@ -22,7 +22,7 @@ const servizi = [
 
 export function Services() {
   return (
-    <section id="servizi" className="relative mx-auto max-w-6xl overflow-hidden px-5 py-24">
+    <section id="servizi" className="relative mx-auto max-w-6xl overflow-hidden px-5 py-16 sm:py-20 md:py-24">
       <span
         aria-hidden
         className="pointer-events-none absolute top-10 right-2 select-none md:right-12"

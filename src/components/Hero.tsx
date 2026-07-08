@@ -88,15 +88,15 @@ export function Hero() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 1.6, duration: 0.7 }}
-          className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row"
+          className="mt-10 flex w-full max-w-sm flex-col items-stretch justify-center gap-3 px-2 sm:max-w-none sm:flex-row sm:items-center sm:gap-4 sm:px-0"
         >
           <motion.a
             href={`tel:${SITE.telefono1.tel}`}
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.97 }}
-            className="flex items-center gap-3 rounded-full bg-brick px-9 py-4 text-lg font-medium text-white shadow-xl shadow-ink/30 transition-colors hover:bg-brick-dark"
+            className="flex items-center justify-center gap-3 rounded-full bg-brick px-6 py-3.5 text-base font-medium whitespace-nowrap text-white shadow-xl shadow-ink/30 transition-colors hover:bg-brick-dark sm:px-9 sm:py-4 sm:text-lg"
           >
-            <Phone className="h-5 w-5" />
+            <Phone className="h-5 w-5 shrink-0" />
             Prenota {SITE.telefono1.label}
           </motion.a>
           <motion.a
@@ -105,10 +105,11 @@ export function Hero() {
             rel="noreferrer"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.97 }}
-            className="flex items-center gap-3 rounded-full border-2 border-cream/80 bg-cream/10 px-8 py-4 text-lg font-medium text-cream backdrop-blur-sm transition-colors hover:bg-cream hover:text-brick"
+            className="flex items-center justify-center gap-3 rounded-full border-2 border-cream/80 bg-cream/10 px-6 py-3.5 text-base font-medium whitespace-nowrap text-cream backdrop-blur-sm transition-colors hover:bg-cream hover:text-brick sm:px-8 sm:py-4 sm:text-lg"
           >
-            <MessageCircle className="h-5 w-5" />
-            Scrivici per altri appartamenti
+            <MessageCircle className="h-5 w-5 shrink-0" />
+            <span className="sm:hidden">Altri appartamenti</span>
+            <span className="hidden sm:inline">Scrivici per altri appartamenti</span>
           </motion.a>
         </motion.div>
       </motion.div>

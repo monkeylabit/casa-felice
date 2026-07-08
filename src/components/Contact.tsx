@@ -6,7 +6,7 @@ import { Cuore } from './Cuore'
 
 export function Contact() {
   return (
-    <section id="contatti" className="relative overflow-hidden px-5 py-28">
+    <section id="contatti" className="relative overflow-hidden px-5 py-16 sm:py-20 md:py-28">
       <div
         aria-hidden
         className="pointer-events-none absolute inset-0 opacity-[0.06]"
@@ -77,10 +77,11 @@ export function Contact() {
             </p>
             <a
               href={`mailto:${SITE.email}?subject=Informazioni%20altri%20appartamenti`}
-              className="mt-4 inline-flex items-center gap-2 rounded-full border border-brick px-6 py-2.5 text-sm font-medium text-brick transition-colors hover:bg-brick hover:text-white"
+              className="mt-4 inline-flex items-center gap-2 rounded-full border border-brick px-5 py-2.5 text-sm font-medium whitespace-nowrap text-brick transition-colors hover:bg-brick hover:text-white sm:px-6"
             >
-              <Mail className="h-4 w-4" />
-              Scriveteci per altri appartamenti
+              <Mail className="h-4 w-4 shrink-0" />
+              <span className="sm:hidden">Scriveteci</span>
+              <span className="hidden sm:inline">Scriveteci per altri appartamenti</span>
             </a>
           </div>
         </Reveal>

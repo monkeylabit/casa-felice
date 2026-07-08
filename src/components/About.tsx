@@ -15,7 +15,7 @@ export function About() {
         className="pointer-events-none absolute -bottom-32 -left-24 h-80 w-80 rounded-full bg-cream-dark blur-3xl"
       />
 
-      <div className="relative mx-auto max-w-6xl px-5 py-24">
+      <div className="relative mx-auto max-w-6xl px-5 py-16 sm:py-20 md:py-24">
         <div className="grid items-center gap-12 md:grid-cols-2">
           <div>
             <Reveal>

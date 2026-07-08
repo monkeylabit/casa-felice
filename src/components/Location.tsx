@@ -10,7 +10,7 @@ const dintorni = [
 
 export function Location() {
   return (
-    <section id="dove-siamo" className="bg-cream-dark/60 px-5 py-24">
+    <section id="dove-siamo" className="bg-cream-dark/60 px-5 py-16 sm:py-20 md:py-24">
       <div className="mx-auto max-w-6xl">
         <Reveal className="mb-12 text-center">
           <p className="font-script text-3xl text-brick">dove siamo</p>
@@ -25,7 +25,7 @@ export function Location() {
               <iframe
                 title="Mappa di Casa Felice — Via Metauro 14, Spoltore"
                 src={SITE.mapsEmbed}
-                className="h-[380px] w-full border-0"
+                className="h-[280px] w-full border-0 sm:h-[380px]"
                 loading="lazy"
                 referrerPolicy="no-referrer-when-downgrade"
               />

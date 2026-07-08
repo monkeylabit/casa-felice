@@ -41,7 +41,7 @@ const recensioni = [
 
 export function Reviews() {
   return (
-    <section id="recensioni" className="relative overflow-hidden bg-cream-dark/60 px-5 py-24">
+    <section id="recensioni" className="relative overflow-hidden bg-cream-dark/60 px-5 py-16 sm:py-20 md:py-24">
       <div
         aria-hidden
         className="pointer-events-none absolute -top-20 -right-24 h-72 w-72 rounded-full bg-blush/40 blur-3xl"
@@ -84,7 +84,7 @@ export function Reviews() {
 
         {/* Voti per categoria */}
         <Reveal delay={0.2}>
-          <div className="mx-auto mt-8 grid max-w-3xl grid-cols-2 gap-x-8 gap-y-5 sm:grid-cols-3">
+          <div className="mx-auto mt-8 grid max-w-3xl grid-cols-1 gap-x-8 gap-y-5 sm:grid-cols-3">
             {categorie.map((c) => (
               <div key={c.nome}>
                 <div className="flex items-baseline justify-between text-sm">

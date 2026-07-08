@@ -63,7 +63,7 @@ export function Gallery() {
   return (
     <section
       id="galleria"
-      className="relative overflow-hidden bg-cream-dark/60 px-4 py-24"
+      className="relative overflow-hidden bg-cream-dark/60 px-4 py-16 sm:py-20 md:py-24"
     >
       <span
         aria-hidden
@@ -165,7 +165,7 @@ export function Gallery() {
                 className="relative max-h-[90vh] max-w-5xl"
               >
                 <button
-                  className="absolute -top-12 right-0 rounded-full p-2 text-cream transition-colors hover:bg-white/10 md:-right-12 md:top-0"
+                  className="absolute top-2 right-2 rounded-full bg-ink/40 p-2 text-cream transition-colors hover:bg-white/10 md:top-0 md:-right-12 md:bg-transparent"
                   onClick={() => setSelezionata(null)}
                   aria-label="Chiudi"
                 >
