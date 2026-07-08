@@ -27,13 +27,44 @@ export function Services() {
       >
         <Cuore className="h-36 w-36 opacity-25" />
       </span>
+      {/* Aloni morbidi di colore sullo sfondo */}
+      <div
+        aria-hidden
+        className="pointer-events-none absolute -top-20 -left-32 h-80 w-80 rounded-full bg-blush/40 blur-3xl"
+      />
+      <div
+        aria-hidden
+        className="pointer-events-none absolute -bottom-24 -right-24 h-72 w-72 rounded-full bg-cream-dark blur-3xl"
+      />
 
       <Reveal className="relative mb-14 text-center">
-        <p className="font-script text-3xl text-brick">i comfort</p>
-        <h2 className="mt-1 text-4xl font-semibold tracking-tight md:text-5xl">
-          Tutto quello che vi serve
+        <p className="flex items-center justify-center gap-3 font-script text-3xl text-brick">
+          <span aria-hidden className="h-px w-10 bg-brick/40" />
+          i comfort
+          <Cuore className="h-5 w-5" />
+          <span aria-hidden className="h-px w-10 bg-brick/40" />
+        </p>
+        <h2 className="mt-3 text-4xl font-semibold tracking-tight md:text-5xl">
+          Tutto quello che vi{' '}
+          <span className="relative inline-block whitespace-nowrap font-script text-5xl text-brick md:text-6xl">
+            serve
+            <svg
+              aria-hidden
+              viewBox="0 0 120 12"
+              preserveAspectRatio="none"
+              className="absolute -bottom-1 left-0 h-3 w-full"
+            >
+              <path
+                d="M2 8 C 20 2, 40 10, 60 6 S 100 2, 118 7"
+                fill="none"
+                stroke="#e8a9a4"
+                strokeWidth="3"
+                strokeLinecap="round"
+              />
+            </svg>
+          </span>
         </h2>
-        <p className="mx-auto mt-4 max-w-xl text-ink-soft">
+        <p className="mx-auto mt-5 max-w-xl text-ink-soft">
           Piccole attenzioni e comodità pensate per farvi stare bene, dal primo
           caffè del mattino alla buonanotte.
         </p>
@@ -79,12 +110,16 @@ export function Services() {
             viewport={{ once: true, margin: '-60px' }}
             transition={{ duration: 0.6, delay: 0.1 + i * 0.08, ease: [0.21, 0.47, 0.32, 0.98] }}
             whileHover={{ y: -6, rotate: i % 2 === 0 ? 0.6 : -0.6 }}
-            className="group flex items-start gap-5 rounded-[2rem] border border-ink/8 bg-white/80 p-7 shadow-sm transition-shadow hover:border-heart/50 hover:shadow-xl hover:shadow-blush/40"
+            className="group relative flex items-start gap-5 overflow-hidden rounded-[2rem] border border-ink/8 bg-white/80 p-7 shadow-sm transition-shadow hover:border-heart/50 hover:shadow-xl hover:shadow-blush/40"
           >
+            <div
+              aria-hidden
+              className="pointer-events-none absolute -top-10 -right-10 h-28 w-28 rounded-full bg-blush/50 blur-2xl opacity-0 transition-opacity duration-500 group-hover:opacity-100"
+            />
             <motion.div
               whileHover={{ rotate: [0, -12, 10, 0] }}
               transition={{ duration: 0.5 }}
-              className="shrink-0 rounded-2xl bg-gradient-to-br from-blush to-heart/60 p-3.5 text-brick shadow-inner"
+              className="shrink-0 rounded-2xl bg-gradient-to-br from-blush to-heart/60 p-3.5 text-brick shadow-inner ring-1 ring-heart/30"
             >
               <s.icona className="h-6 w-6" />
             </motion.div>
@@ -102,6 +137,13 @@ export function Services() {
           </motion.div>
         ))}
       </div>
+
+      <Reveal delay={0.2} className="relative mt-12 text-center">
+        <p className="font-script text-3xl text-ink-soft">
+          …e mille altre piccole attenzioni{' '}
+          <Cuore className="h-6 w-6 align-middle" />
+        </p>
+      </Reveal>
     </section>
   )
 }

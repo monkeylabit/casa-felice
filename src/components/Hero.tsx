@@ -1,5 +1,5 @@
 import { motion, useScroll, useTransform } from 'framer-motion'
-import { Phone, Mail, ChevronDown } from 'lucide-react'
+import { Phone, MessageCircle, ChevronDown } from 'lucide-react'
 import { SITE } from '../site'
 import { Cuore } from './Cuore'
 
@@ -100,13 +100,15 @@ export function Hero() {
             Prenota {SITE.telefono1.label}
           </motion.a>
           <motion.a
-            href={`mailto:${SITE.email}?subject=Informazioni%20altri%20appartamenti`}
+            href={SITE.whatsapp}
+            target="_blank"
+            rel="noreferrer"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.97 }}
             className="flex items-center gap-3 rounded-full border-2 border-cream/80 bg-cream/10 px-8 py-4 text-lg font-medium text-cream backdrop-blur-sm transition-colors hover:bg-cream hover:text-brick"
           >
-            <Mail className="h-5 w-5" />
-            Contattaci per altri appartamenti
+            <MessageCircle className="h-5 w-5" />
+            Scrivici per altri appartamenti
           </motion.a>
         </motion.div>
       </motion.div>
@@ -114,13 +116,30 @@ export function Hero() {
       <motion.a
         href="#la-casa"
         aria-label="Scorri per scoprire la casa"
-        className="absolute bottom-6 left-1/2 z-10 -translate-x-1/2 text-cream/80"
+        className="absolute bottom-10 left-1/2 z-10 -translate-x-1/2 text-cream/80"
         animate={{ y: [0, 10, 0] }}
         transition={{ repeat: Infinity, duration: 1.8, ease: 'easeInOut' }}
         style={{ opacity: fadeOut }}
       >
         <ChevronDown className="h-8 w-8" />
       </motion.a>
+
+      {/* Onda di raccordo verso la sezione "benvenuti" */}
+      <div
+        aria-hidden
+        className="pointer-events-none absolute inset-x-0 bottom-0 z-[5] text-cream"
+      >
+        <svg
+          viewBox="0 0 1440 100"
+          preserveAspectRatio="none"
+          className="h-16 w-full md:h-24"
+        >
+          <path
+            d="M0,40 C 240,90 480,0 720,24 C 960,48 1200,96 1440,32 L1440,100 L0,100 Z"
+            fill="currentColor"
+          />
+        </svg>
+      </div>
     </section>
   )
 }
