@@ -74,12 +74,12 @@ export function Hero() {
               key={i}
               aria-hidden
               className="inline-block"
-              initial={{ opacity: 0, y: 40, rotate: -6 }}
-              animate={fontPronto ? { opacity: 1, y: 0, rotate: 0 } : { opacity: 0, y: 40, rotate: -6 }}
+              initial={{ opacity: 0, y: 40 }}
+              animate={fontPronto ? { opacity: 1, y: 0 } : { opacity: 0, y: 40 }}
               transition={{
                 delay: 0.5 + i * 0.06,
                 type: 'spring',
-                damping: 14,
+                damping: 20,
                 stiffness: 200,
               }}
             >
@@ -155,7 +155,7 @@ export function Hero() {
         <svg
           viewBox="0 0 1440 100"
           preserveAspectRatio="none"
-          className="h-20 w-full drop-shadow-[0_-6px_10px_rgba(33,28,25,0.25)] sm:h-24 md:h-32"
+          className="h-20 w-full sm:h-24 md:h-32"
         >
           <path
             d="M0,55 C 240,95 480,20 720,40 C 960,60 1200,98 1440,50 L1440,100 L0,100 Z"

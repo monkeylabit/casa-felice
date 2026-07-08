@@ -5,7 +5,7 @@ import { toWebp } from '../lib/img'
 
 export function About() {
   return (
-    <section id="la-casa" className="relative overflow-hidden">
+    <section id="la-casa" className="relative -mt-1 overflow-hidden bg-cream">
       {/* Aloni morbidi di colore sullo sfondo */}
       <div
         aria-hidden
