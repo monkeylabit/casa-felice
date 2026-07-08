@@ -1,7 +1,9 @@
 import { motion, useScroll, useTransform } from 'framer-motion'
 import { Phone, MessageCircle, ChevronDown } from 'lucide-react'
+import { useEffect, useState } from 'react'
 import { SITE } from '../site'
 import { Cuore } from './Cuore'
+import { toWebp } from '../lib/img'
 
 /*
  * Hero con effetto parallasse allo scroll.
@@ -16,19 +18,39 @@ export function Hero() {
 
   const titolo = 'Casa Felice'
 
+  // Aspetta che il font Caveat sia pronto prima di animare il titolo,
+  // per evitare che le lettere partano con il font di riserva e "saltino".
+  const [fontPronto, setFontPronto] = useState(false)
+  useEffect(() => {
+    let attivo = true
+    document.fonts.ready.then(() => {
+      if (attivo) setFontPronto(true)
+    })
+    return () => {
+      attivo = false
+    }
+  }, [])
+
   return (
     <section id="home" className="relative h-screen w-full overflow-hidden">
       <motion.div
         className="absolute inset-0"
         style={{ scale: bgScale, y: bgY, willChange: 'transform' }}
       >
-        <img
-          src="/img/hero-casa.jpg"
-          alt="Casa Felice vista dall'alto al tramonto"
-          className="h-full w-full object-cover"
-        />
+        <picture>
+          <source srcSet={toWebp('/img/hero-casa.jpg')} type="image/webp" />
+          <img
+            src="/img/hero-casa.jpg"
+            alt="Casa Felice vista dall'alto al tramonto"
+            className="h-full w-full object-cover"
+            width={1600}
+            height={900}
+            decoding="async"
+            fetchPriority="high"
+          />
+        </picture>
       </motion.div>
-      <div className="absolute inset-0 bg-gradient-to-b from-ink/55 via-ink/25 to-ink/60" />
+      <div className="absolute inset-0 bg-gradient-to-b from-ink/55 via-ink/20 to-ink/85" />
 
       <motion.div
         style={{ opacity: fadeOut }}
@@ -53,7 +75,7 @@ export function Hero() {
               aria-hidden
               className="inline-block"
               initial={{ opacity: 0, y: 40, rotate: -6 }}
-              animate={{ opacity: 1, y: 0, rotate: 0 }}
+              animate={fontPronto ? { opacity: 1, y: 0, rotate: 0 } : { opacity: 0, y: 40, rotate: -6 }}
               transition={{
                 delay: 0.5 + i * 0.06,
                 type: 'spring',
@@ -68,7 +90,7 @@ export function Hero() {
             aria-hidden
             className="ml-3 inline-block align-middle"
             initial={{ opacity: 0, scale: 0 }}
-            animate={{ opacity: 1, scale: 1 }}
+            animate={fontPronto ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0 }}
             transition={{ delay: 1.4, type: 'spring', damping: 10 }}
           >
             <Cuore className="h-12 w-12 drop-shadow-md md:h-14 md:w-14" />
@@ -133,10 +155,10 @@ export function Hero() {
         <svg
           viewBox="0 0 1440 100"
           preserveAspectRatio="none"
-          className="h-16 w-full md:h-24"
+          className="h-20 w-full drop-shadow-[0_-6px_10px_rgba(33,28,25,0.25)] sm:h-24 md:h-32"
         >
           <path
-            d="M0,40 C 240,90 480,0 720,24 C 960,48 1200,96 1440,32 L1440,100 L0,100 Z"
+            d="M0,55 C 240,95 480,20 720,40 C 960,60 1200,98 1440,50 L1440,100 L0,100 Z"
             fill="currentColor"
           />
         </svg>

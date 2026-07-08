@@ -4,6 +4,7 @@ import { useState } from 'react'
 import type { KeyboardEvent } from 'react'
 import { Reveal } from './Reveal'
 import { Cuore } from './Cuore'
+import { toWebp } from '../lib/img'
 
 /*
  * Galleria con filtri e lightbox animato.
@@ -12,24 +13,31 @@ import { Cuore } from './Cuore'
  * https://21st.dev/@larsen66/components/gallery-grid-block-shadcnui
  */
 
-type Foto = { id: number; url: string; titolo: string; categoria: string }
+type Foto = {
+  id: number
+  url: string
+  titolo: string
+  categoria: string
+  larghezza: number
+  altezza: number
+}
 
 const foto: Foto[] = [
-  { id: 1, url: '/img/vista-tetti.jpg', titolo: 'La casa vista dall’alto', categoria: 'Terrazzo e vista' },
-  { id: 2, url: '/img/terrazzo.jpg', titolo: 'Il terrazzo panoramico', categoria: 'Terrazzo e vista' },
-  { id: 3, url: '/img/terrazzo-tavolino.jpg', titolo: 'Angolo relax sul terrazzo', categoria: 'Terrazzo e vista' },
-  { id: 4, url: '/img/panorama.jpg', titolo: 'Il panorama su Santa Teresa', categoria: 'Terrazzo e vista' },
-  { id: 5, url: '/img/camera-luminosa.jpg', titolo: 'Camera matrimoniale', categoria: 'Camere' },
-  { id: 6, url: '/img/camera-matrimoniale.jpg', titolo: 'Camera con letto matrimoniale', categoria: 'Camere' },
-  { id: 7, url: '/img/camera-armadio.jpg', titolo: 'Camera con armadio', categoria: 'Camere' },
-  { id: 8, url: '/img/cameretta.jpg', titolo: 'Camera', categoria: 'Camere' },
-  { id: 9, url: '/img/sala-pranzo.jpg', titolo: 'La sala da pranzo', categoria: 'Cucina e soggiorno' },
-  { id: 10, url: '/img/cucina.jpg', titolo: 'La cucina attrezzata', categoria: 'Cucina e soggiorno' },
-  { id: 11, url: '/img/soggiorno.jpg', titolo: 'Il soggiorno', categoria: 'Cucina e soggiorno' },
-  { id: 12, url: '/img/bagno.jpg', titolo: 'Il bagno', categoria: 'Bagno' },
-  { id: 13, url: '/img/bagno-1.jpg', titolo: 'Il bagno principale', categoria: 'Bagno' },
-  { id: 14, url: '/img/bagno-2.jpg', titolo: 'Bagno', categoria: 'Bagno' },
-  { id: 15, url: '/img/bagno-3.jpg', titolo: 'Dettaglio del bagno', categoria: 'Bagno' },
+  { id: 1, url: '/img/vista-tetti.jpg', titolo: 'La casa vista dall’alto', categoria: 'Terrazzo e vista', larghezza: 1600, altezza: 900 },
+  { id: 2, url: '/img/terrazzo.jpg', titolo: 'Il terrazzo panoramico', categoria: 'Terrazzo e vista', larghezza: 1600, altezza: 1066 },
+  { id: 3, url: '/img/terrazzo-tavolino.jpg', titolo: 'Angolo relax sul terrazzo', categoria: 'Terrazzo e vista', larghezza: 1600, altezza: 1066 },
+  { id: 4, url: '/img/panorama.jpg', titolo: 'Il panorama su Santa Teresa', categoria: 'Terrazzo e vista', larghezza: 1600, altezza: 900 },
+  { id: 5, url: '/img/camera-luminosa.jpg', titolo: 'Camera matrimoniale', categoria: 'Camere', larghezza: 1600, altezza: 1066 },
+  { id: 6, url: '/img/camera-matrimoniale.jpg', titolo: 'Camera con letto matrimoniale', categoria: 'Camere', larghezza: 1600, altezza: 1066 },
+  { id: 7, url: '/img/camera-armadio.jpg', titolo: 'Camera con armadio', categoria: 'Camere', larghezza: 1600, altezza: 1066 },
+  { id: 8, url: '/img/cameretta.jpg', titolo: 'Camera', categoria: 'Camere', larghezza: 1600, altezza: 1066 },
+  { id: 9, url: '/img/sala-pranzo.jpg', titolo: 'La sala da pranzo', categoria: 'Cucina e soggiorno', larghezza: 1600, altezza: 1066 },
+  { id: 10, url: '/img/cucina.jpg', titolo: 'La cucina attrezzata', categoria: 'Cucina e soggiorno', larghezza: 1600, altezza: 1066 },
+  { id: 11, url: '/img/soggiorno.jpg', titolo: 'Il soggiorno', categoria: 'Cucina e soggiorno', larghezza: 1600, altezza: 1066 },
+  { id: 12, url: '/img/bagno.jpg', titolo: 'Il bagno', categoria: 'Bagno', larghezza: 1600, altezza: 1066 },
+  { id: 13, url: '/img/bagno-1.jpg', titolo: 'Il bagno principale', categoria: 'Bagno', larghezza: 1600, altezza: 1066 },
+  { id: 14, url: '/img/bagno-2.jpg', titolo: 'Bagno', categoria: 'Bagno', larghezza: 1600, altezza: 1066 },
+  { id: 15, url: '/img/bagno-3.jpg', titolo: 'Dettaglio del bagno', categoria: 'Bagno', larghezza: 1600, altezza: 1066 },
 ]
 
 const categorie = ['Tutte', ...new Set(foto.map((f) => f.categoria))]
@@ -123,12 +131,18 @@ export function Gallery() {
                   aria-label={`Apri: ${f.titolo}`}
                 >
                   <div className="overflow-hidden rounded-lg">
-                    <img
-                      src={f.url}
-                      alt={f.titolo}
-                      loading="lazy"
-                      className="h-auto w-full transition-transform duration-500 group-hover:scale-105"
-                    />
+                    <picture>
+                      <source srcSet={toWebp(f.url)} type="image/webp" />
+                      <img
+                        src={f.url}
+                        alt={f.titolo}
+                        width={f.larghezza}
+                        height={f.altezza}
+                        loading="lazy"
+                        decoding="async"
+                        className="h-auto w-full transition-transform duration-500 group-hover:scale-105"
+                      />
+                    </picture>
                   </div>
                   <div className="flex items-center justify-between px-1 pt-2 pb-1">
                     <p className="font-script text-2xl leading-none text-ink-soft">
@@ -192,15 +206,18 @@ export function Gallery() {
                   <ChevronRight className="h-7 w-7" />
                 </button>
 
-                <motion.img
-                  key={selezionata}
-                  src={fotoAperta.url}
-                  alt={fotoAperta.titolo}
-                  className="max-h-[80vh] w-auto rounded-xl"
-                  initial={{ opacity: 0 }}
-                  animate={{ opacity: 1 }}
-                  transition={{ duration: 0.2 }}
-                />
+                <picture>
+                  <source srcSet={toWebp(fotoAperta.url)} type="image/webp" />
+                  <motion.img
+                    key={selezionata}
+                    src={fotoAperta.url}
+                    alt={fotoAperta.titolo}
+                    className="max-h-[80vh] w-auto rounded-xl"
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    transition={{ duration: 0.2 }}
+                  />
+                </picture>
                 <motion.div
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}

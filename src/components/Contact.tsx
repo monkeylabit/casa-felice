@@ -11,7 +11,7 @@ export function Contact() {
         aria-hidden
         className="pointer-events-none absolute inset-0 opacity-[0.06]"
         style={{
-          backgroundImage: 'url(/img/vista-tetti.jpg)',
+          backgroundImage: 'url(/img/vista-tetti.webp)',
           backgroundSize: 'cover',
           backgroundPosition: 'center',
         }}

@@ -1,6 +1,7 @@
 import { motion } from 'framer-motion'
 import { Reveal } from './Reveal'
 import { Cuore } from './Cuore'
+import { toWebp } from '../lib/img'
 
 export function About() {
   return (
@@ -79,23 +80,37 @@ export function About() {
                   aria-hidden
                   className="absolute -inset-3 rotate-2 rounded-3xl bg-blush/70 md:-inset-4"
                 />
-                <motion.img
-                  src="/img/terrazzo-tavolino.jpg"
-                  alt="Angolo relax sul terrazzo di Casa Felice"
-                  className="relative w-full rounded-3xl object-cover shadow-2xl shadow-ink/15"
-                  whileHover={{ scale: 1.02, rotate: 0.4 }}
-                  transition={{ duration: 0.4 }}
-                />
+                <picture>
+                  <source srcSet={toWebp('/img/terrazzo-tavolino.jpg')} type="image/webp" />
+                  <motion.img
+                    src="/img/terrazzo-tavolino.jpg"
+                    alt="Angolo relax sul terrazzo di Casa Felice"
+                    className="relative w-full rounded-3xl object-cover shadow-2xl shadow-ink/15"
+                    width={1600}
+                    height={1066}
+                    loading="lazy"
+                    decoding="async"
+                    whileHover={{ scale: 1.02, rotate: 0.4 }}
+                    transition={{ duration: 0.4 }}
+                  />
+                </picture>
               </div>
             </Reveal>
             <Reveal delay={0.4} className="absolute -bottom-10 -left-6 hidden w-48 md:block">
-              <motion.img
-                src="/img/benvenuto.jpg"
-                alt="Il benvenuto di Casa Felice"
-                className="-rotate-3 rounded-2xl border-4 border-cream object-cover shadow-xl"
-                whileHover={{ scale: 1.05, rotate: -1 }}
-                transition={{ duration: 0.4 }}
-              />
+              <picture>
+                <source srcSet={toWebp('/img/benvenuto.jpg')} type="image/webp" />
+                <motion.img
+                  src="/img/benvenuto.jpg"
+                  alt="Il benvenuto di Casa Felice"
+                  className="-rotate-3 rounded-2xl border-4 border-cream object-cover shadow-xl"
+                  width={1600}
+                  height={1066}
+                  loading="lazy"
+                  decoding="async"
+                  whileHover={{ scale: 1.05, rotate: -1 }}
+                  transition={{ duration: 0.4 }}
+                />
+              </picture>
             </Reveal>
           </div>
         </div>

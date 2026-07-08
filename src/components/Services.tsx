@@ -10,6 +10,7 @@ import {
 } from 'lucide-react'
 import { Reveal } from './Reveal'
 import { Cuore } from './Cuore'
+import { toWebp } from '../lib/img'
 
 const servizi = [
   { icona: UtensilsCrossed, titolo: 'Cucina attrezzata', testo: 'Tutto il necessario per cucinare come a casa vostra.' },
@@ -82,11 +83,18 @@ export function Services() {
           whileHover={{ y: -6 }}
           className="group relative min-h-[320px] overflow-hidden rounded-[2rem] shadow-lg sm:col-span-2 lg:row-span-2"
         >
-          <motion.img
-            src="/img/terrazzo-sunset.png"
-            alt="Il terrazzo panoramico di Casa Felice"
-            className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
-          />
+          <picture>
+            <source srcSet={toWebp('/img/terrazzo-sunset.png')} type="image/webp" />
+            <motion.img
+              src="/img/terrazzo-sunset.png"
+              alt="Il terrazzo panoramico di Casa Felice"
+              className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
+              width={1024}
+              height={1024}
+              loading="lazy"
+              decoding="async"
+            />
+          </picture>
           <div className="absolute inset-0 bg-gradient-to-t from-ink/75 via-ink/20 to-transparent" />
           <div className="relative flex h-full flex-col justify-end p-8">
             <span className="mb-3 inline-flex w-fit items-center gap-2 rounded-full bg-cream/90 px-4 py-1.5 text-sm font-medium text-brick">
