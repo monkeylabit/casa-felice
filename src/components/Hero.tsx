@@ -113,16 +113,16 @@ export function Hero() {
           className="mt-10 flex w-full max-w-sm flex-col items-stretch justify-center gap-3 px-2 sm:max-w-none sm:flex-row sm:items-center sm:gap-4 sm:px-0"
         >
           <motion.a
-            href={`tel:${SITE.telefono1.tel}`}
+            href={`tel:${SITE.telefono2.tel}`}
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.97 }}
             className="flex items-center justify-center gap-3 rounded-full bg-brick px-6 py-3.5 text-base font-medium whitespace-nowrap text-white shadow-xl shadow-ink/30 transition-colors hover:bg-brick-dark sm:px-9 sm:py-4 sm:text-lg"
           >
             <Phone className="h-5 w-5 shrink-0" />
-            Prenota {SITE.telefono1.label}
+            Prenota {SITE.telefono2.label}
           </motion.a>
           <motion.a
-            href={SITE.whatsapp}
+            href={SITE.whatsapp2}
             target="_blank"
             rel="noreferrer"
             whileHover={{ scale: 1.05 }}

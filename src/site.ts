@@ -5,6 +5,7 @@ export const SITE = {
   telefono1: { label: '347 013 4856', tel: '+393470134856' },
   telefono2: { label: '333 476 1804', tel: '+393334761804' },
   whatsapp: 'https://wa.me/393470134856',
+  whatsapp2: 'https://wa.me/393334761804',
   email: 'giovannaiacomi@yahoo.it',
   booking: 'https://www.booking.com/hotel/it/casa-felice-santa-teresa.it.html',
   mapsEmbed:

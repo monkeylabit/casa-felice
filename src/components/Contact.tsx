@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion'
-import { Phone, Mail, MessageCircle, ExternalLink } from 'lucide-react'
+import { Phone, Mail, ExternalLink } from 'lucide-react'
 import { Reveal } from './Reveal'
 import { SITE } from '../site'
 import { Cuore } from './Cuore'
@@ -30,7 +30,7 @@ export function Contact() {
         </Reveal>
 
         <Reveal delay={0.2}>
-          <div className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row">
+          <div className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row sm:flex-wrap">
             <motion.a
               href={`tel:${SITE.telefono1.tel}`}
               whileHover={{ scale: 1.05 }}
@@ -41,15 +41,13 @@ export function Contact() {
               {SITE.telefono1.label}
             </motion.a>
             <motion.a
-              href={SITE.whatsapp}
-              target="_blank"
-              rel="noopener noreferrer"
+              href={`tel:${SITE.telefono2.tel}`}
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.97 }}
-              className="flex w-full items-center justify-center gap-3 rounded-full bg-[#25D366] px-8 py-4 text-lg font-medium text-white shadow-xl shadow-[#25D366]/25 transition-colors hover:bg-[#1fb457] sm:w-auto"
+              className="flex w-full items-center justify-center gap-3 rounded-full bg-brick px-8 py-4 text-lg font-medium text-white shadow-xl shadow-brick/25 transition-colors hover:bg-brick-dark sm:w-auto"
             >
-              <MessageCircle className="h-5 w-5" />
-              WhatsApp
+              <Phone className="h-5 w-5" />
+              {SITE.telefono2.label}
             </motion.a>
           </div>
         </Reveal>

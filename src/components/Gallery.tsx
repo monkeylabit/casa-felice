@@ -30,13 +30,12 @@ const foto: Foto[] = [
   { id: 5, url: '/img/camera-luminosa.jpg', titolo: 'Camera matrimoniale', categoria: 'Camere', larghezza: 1600, altezza: 1066 },
   { id: 6, url: '/img/camera-matrimoniale.jpg', titolo: 'Camera con letto matrimoniale', categoria: 'Camere', larghezza: 1600, altezza: 1066 },
   { id: 7, url: '/img/camera-armadio.jpg', titolo: 'Camera con armadio', categoria: 'Camere', larghezza: 1600, altezza: 1066 },
-  { id: 8, url: '/img/cameretta.jpg', titolo: 'Camera', categoria: 'Camere', larghezza: 1600, altezza: 1066 },
+  { id: 8, url: '/img/cameretta.jpg', titolo: 'Cameretta', categoria: 'Camere', larghezza: 2048, altezza: 923 },
   { id: 9, url: '/img/sala-pranzo.jpg', titolo: 'La sala da pranzo', categoria: 'Cucina e soggiorno', larghezza: 1600, altezza: 1066 },
   { id: 10, url: '/img/cucina.jpg', titolo: 'La cucina attrezzata', categoria: 'Cucina e soggiorno', larghezza: 1600, altezza: 1066 },
   { id: 11, url: '/img/soggiorno.jpg', titolo: 'Il soggiorno', categoria: 'Cucina e soggiorno', larghezza: 1600, altezza: 1066 },
   { id: 12, url: '/img/bagno.jpg', titolo: 'Il bagno', categoria: 'Bagno', larghezza: 1600, altezza: 1066 },
   { id: 13, url: '/img/bagno-1.jpg', titolo: 'Il bagno principale', categoria: 'Bagno', larghezza: 1600, altezza: 1066 },
-  { id: 14, url: '/img/bagno-2.jpg', titolo: 'Bagno', categoria: 'Bagno', larghezza: 1600, altezza: 1066 },
   { id: 15, url: '/img/bagno-3.jpg', titolo: 'Dettaglio del bagno', categoria: 'Bagno', larghezza: 1600, altezza: 1066 },
 ]
 
