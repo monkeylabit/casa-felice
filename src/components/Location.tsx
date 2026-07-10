@@ -5,7 +5,7 @@ import { SITE } from '../site'
 const dintorni = [
   { icona: Plane, testo: 'Aeroporto di Pescara a soli 3 km, 10 minuti d’auto' },
   { icona: Waves, testo: 'Mare e spiagge di Pescara a 8 km' },
-  { icona: Mountain, testo: 'Colline e borghi d’Abruzzo tutt’intorno' },
+  { icona: Mountain, testo: 'Vista sulla Majella all’orizzonte' },
 ]
 
 export function Location() {
