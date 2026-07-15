@@ -15,6 +15,22 @@ export function Footer() {
         © {new Date().getFullYear()} Casa Felice — Casa turistica a Santa
         Teresa di Spoltore
       </p>
+      <p className="mt-2 flex items-center justify-center gap-1.5 text-xs text-ink-soft/60">
+        Sito creato da{' '}
+        <a
+          href="https://monkeylab.it/"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="inline-flex items-center gap-1 underline hover:text-ink-soft"
+        >
+          <img
+            src="/img/icon.png"
+            alt="Monkey Lab"
+            className="h-5 w-5 rounded-full object-cover"
+          />
+          Monkey Lab
+        </a>
+      </p>
     </footer>
   )
 }
